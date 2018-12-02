@@ -18,5 +18,5 @@ foundFrequencies = scanl (+) 0 inputRepeated
 firstDifferent :: Eq a => [a] -> [a] -> (a,a)
 firstDifferent (x:xs) (y:ys) = if x == y then firstDifferent xs ys else (x,y)
 
-result2a :: Int
-result2a = fst $ firstDifferent foundFrequencies (nub foundFrequencies)
+result2 :: Int
+result2 = fst $ firstDifferent foundFrequencies (nub foundFrequencies)

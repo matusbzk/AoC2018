@@ -1,4 +1,4 @@
-﻿using System;
+using System;
  
 namespace Day12
 {
@@ -6,20 +6,13 @@ namespace Day12
     {
         static void Main(string[] args)
         {
-            //string initialState = "#..#.#..##......###...###";
-            //var pots = new Pots(initialState, "example.txt");
             string initialState = "##.##.#.#...#......#..#.###..##...##.#####..#..###.########.##.....#...#...##....##.#...#.###...#.##";
             var pots = new Pots(initialState, "rules.txt");
 
-            //Console.WriteLine(pots.SumOfTheNumbersOfPotsWhichContainPlant());
-            //for (int i = 0; i < 2000; i++)
-            //{
-            //    pots.NextGeneration();
-            //    pots.PrintStatus();
-            //}
+            pots.ForwardGenerations(20);
+            Console.WriteLine($"Result 1: {pots.SumOfTheNumbersOfPotsWhichContainPlant()}");
 
-
-            pots.ForwardGenerations(50000000000);
+            pots.ForwardGenerations(50000000000 - 20);
             Console.WriteLine($"Result 2: {pots.SumOfTheNumbersOfPotsWhichContainPlant()}");
 
             Console.ReadKey();
